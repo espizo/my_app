@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Swagger Petstore",
-    "contact": { "name": "wordnik api team", "url": "http://developer.wordnik.com" },
+    "title": "Zoo WS",
+    "contact": { "name": "Video Team", "url": "http://video.team" },
     "license": { "name": "Creative Commons 4.0 International", "url": "http://creativecommons.org/licenses/by/4.0/" }
   },
   "host": "petstore.swagger.wordnik.com",
@@ -24,7 +24,6 @@
         "x-nothing-here" : "No, really!"
       },
       "get": {
-        "x-mojo-controller": "t::Api",
         "tags": [ "pets" ],
         "summary": "finds pets in the system",
         "operationId": "listPets",
@@ -49,47 +48,17 @@
             "schema": { "$ref": "https://raw.githubusercontent.com/jhthorsen/swagger2/master/lib/Swagger2/error.json" }
           }
         }
-      },
-      "post": {
-        "x-mojo-controller": "t::Api",
-        "tags": [ "pets" ],
-        "summary": "add pets to the system",
-        "operationId": "addPet",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": { "type": "string" },
-                "tag": { "type": "string" }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "pet response",
-            "schema": { "$ref": "#/definitions/Pet" }
-          },
-          "default": {
-            "description": "unexpected error",
-            "schema": { "$ref": "http://git.io/vcKD4#" }
-          }
-        }
       }
     },
-    "/pets/{petId}": {
-      "post": {
+    "/pets/{id}": {
+      "get": {
         "x-mojo-controller": "t::Api",
         "tags": [ "pets" ],
         "summary": "Info for a specific pet",
-        "operationId": "showPetById",
+        "operationId": "showPet",
         "parameters": [
           {
-            "name": "petId",
+            "name": "id",
             "in": "path",
             "required": true,
             "description": "The id of the pet to receive",
