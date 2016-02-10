@@ -1,0 +1,18 @@
+{
+  "swagger": "2.0",
+  "info": { "title": "Blog", "description": "Blog example", "version": "0.63"  },
+  "basePath": "/api",
+  "paths": {
+    "/pets/{petId}": {
+      "get": {
+        "operationId": "showPetById",
+        "parameters": [ ],
+        "responses": {
+            "200": {
+                "description": "Success"
+            }
+        }
+      }
+    }
+  }
+}
